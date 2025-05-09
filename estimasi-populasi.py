@@ -32,14 +32,21 @@ population_2030 = np.polyval(poly_population, 2030)
 internet_users_2035 = np.polyval(poly_internet_users, 2035)
 
 # Tampilkan hasil
-print("Estimasi Populasi dan Pengguna Internet untuk Tahun yang Hilang:")
-print(estimated_population)
-print(estimated_internet_users)
+print("=== Estimasi Populasi dan Pengguna Internet untuk Tahun yang Hilang ===")
+print("Populasi (dalam jiwa):")
+for year, pop in estimated_population.items():
+    print(f"  Tahun {year}: {pop:,.0f}")
 
-print("\nPersamaan Polinomial:")
-print("Populasi:", population_eq)
-print("Pengguna Internet:", internet_users_eq)
+print("\nPersentase Pengguna Internet (%):")
+for year, users in estimated_internet_users.items():
+    print(f"  Tahun {year}: {users:.2f}%")
 
-print("\nEstimasi Masa Depan:")
-print(f"Populasi Indonesia di tahun 2030: {population_2030:.0f}")
-print(f"Pengguna Internet di Indonesia di tahun 2035: {internet_users_2035:.2f}%")
+print("\n=== Persamaan Polinomial ===")
+print("Persamaan untuk Populasi:")
+print(f"  {population_eq}")
+print("Persamaan untuk Pengguna Internet:")
+print(f"  {internet_users_eq}")
+
+print("\n=== Estimasi Masa Depan ===")
+print(f"Populasi Indonesia di tahun 2030: {population_2030:,.0f} jiwa")
+print(f"Pengguna Internet di Indonesia di tahun 2035: {internet_users_2035:.2f}%\n")
